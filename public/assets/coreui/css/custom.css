@@ -1,0 +1,23 @@
+.sidebar-custom {
+  background-color: #0e0c28; }
+
+.sidebar .nav-link .nav-icon {
+  color: #7a80b4 !important; }
+
+.sidebar .nav-dropdown.open {
+  background: #24274a; }
+  .sidebar .nav-dropdown.open .nav-link {
+    color: #7a80b4; }
+    .sidebar .nav-dropdown.open .nav-link:hover {
+      color: #fff; }
+
+.sidebar .nav-link:hover {
+  color: #fff;
+  background: #24274a; }
+
+  .sidebar .nav-link.active {
+    color: #fff;
+    background: #323a7382;
+}
+
+/*# sourceMappingURL=custom.css.map */
