@@ -1,17 +1,13 @@
 @extends('layouts.frontend.global')
 
 @section('title')
-    Welcome to ICW
+Welcome to ICW
 @endsection
 
 @section('head')
-    {!! htmlScriptTagJsApiV3([
-        'action' => 'homepage',
-        'callback_then' => 'callbackThen',
-        'callback_catch' => 'callbackCatch'
-    ]) !!}
 
- 
+
+
 @endsection
 
 
@@ -57,12 +53,18 @@
     </div>
 
     <div class="row justify-content-center logo-container mt-5 mb-5 " id="l-about-us">
-        <img src='{{asset("frontend/logo/Paris-Logo-2019.png")}}' alt="..." class="img-thumbnail logo-thumbnail animated delay-5s">
-        <img src='{{asset("frontend/logo/Logo BOUTIQUE OFFICE.jpg")}}' alt="..." class="img-thumbnail logo-thumbnail animated delay-4s">
-        <img src='{{asset("frontend/logo/SISSAE LIVING.jpg")}}' alt="..." class="img-thumbnail logo-thumbnail animated delay-3s">
-        <img src='{{asset("frontend/logo/jgp012-1024x710.jpg")}}' alt="..." class="img-thumbnail logo-thumbnail animated delay-2s">
-        <img src='{{asset("frontend/logo/Logo DAFAM PROPERTY.jpg")}}' alt="..." class="img-thumbnail logo-thumbnail animated delay-1s">
-        <img src='{{asset("frontend/logo/Logo JAYA PROPERTY.jpg")}}' alt="..." class="img-thumbnail logo-thumbnail animated fast">
+        <img src='{{asset("frontend/logo/Paris-Logo-2019.png")}}' alt="..."
+            class="img-thumbnail logo-thumbnail animated delay-5s">
+        <img src='{{asset("frontend/logo/Logo BOUTIQUE OFFICE.jpg")}}' alt="..."
+            class="img-thumbnail logo-thumbnail animated delay-4s">
+        <img src='{{asset("frontend/logo/SISSAE LIVING.jpg")}}' alt="..."
+            class="img-thumbnail logo-thumbnail animated delay-3s">
+        <img src='{{asset("frontend/logo/jgp012-1024x710.jpg")}}' alt="..."
+            class="img-thumbnail logo-thumbnail animated delay-2s">
+        <img src='{{asset("frontend/logo/Logo DAFAM PROPERTY.jpg")}}' alt="..."
+            class="img-thumbnail logo-thumbnail animated delay-1s">
+        <img src='{{asset("frontend/logo/Logo JAYA PROPERTY.jpg")}}' alt="..."
+            class="img-thumbnail logo-thumbnail animated fast">
 
     </div>
 </div>
@@ -195,7 +197,7 @@
 
 <!-- TENANTS  -->
 
-<!--
+
    <div id='tenants'></div>
    <div class="wrapper-5">
 
@@ -217,10 +219,11 @@
      </div>
 
    </div>
- -->
+
 
 
 <!-- LANDLORD -->
+<!--
 <div id='landlord' class="wrapper-6">
     <div class="container">
         <div class='row'>
@@ -237,8 +240,12 @@
     </div>
 </div>
 
+-->
+
 
 <!-- CONTACT US -->
+
+
 <div id='contact-us' class="wrapper-7">
     <div class="container">
         <div class='row justify-content-center mb-5 ml-0 mr-0'>
@@ -252,27 +259,50 @@
             </div>
 
             <div class="col-md-8">
-                <form action="{{route('send_message')}}" method="POST">
+                <form action="{{route('send_message')}}" method="POST" id="form_message">
+
+                    <div id="message_alert">
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    </div>
+                   
+
                     @csrf
+
                     <div class="form-group">
-                            <input class="form-control f-c-contact" type="text" placeholder="Name" autocomplete="false">
-                        </div>
-        
-                        <div class="form-group">
-                            <input class="form-control f-c-contact" type="text" placeholder="Email" autocomplete="false">
-                        </div>
-        
-                        <div class="form-group">
-                            <textarea class="form-control f-c-contact" rows="5" placeholder="Enquiry"></textarea>
-                        </div>
-                       
-                        
-                        <div class="form-group text-right">
-                            <button type="submits" class="btn btn-primary btn-contact">Submit</button>
-                        </div>
-                
+                        <input class="form-control f-c-contact" type="text" placeholder="Name" autocomplete="false"
+                            name='name' required>
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control f-c-contact" type="text" placeholder="Email" autocomplete="false"
+                            name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea class="form-control f-c-contact" rows="5" placeholder="Enquiry"
+                            name="inquiry" required></textarea>
+                    </div>
+                    
+                    {{-- reCAPTCHA  --}}
+
+                    {!! htmlFormSnippet() !!}
+
+                    {{-- end --}}
+                    
+                    <div class="form-group ">
+                        <button type="button" id='btn_submit_message' class="btn btn-primary btn-contact text-right ">Submit</button>
+                    </div>
+
                 </form>
-                
+
             </div>
 
 
@@ -294,7 +324,8 @@
                             </h4>
 
                             <div class="box-detail-map">
-                                <img src='{{asset("frontend/icons/svg/building-2.svg")}}' alt="" srcset="" class="icon-sm">
+                                <img src='{{asset("frontend/icons/svg/building-2.svg")}}' alt="" srcset=""
+                                    class="icon-sm">
                                 <p>
                                     16th Floor - T-9,
                                     APL Tower, Podomoro City
@@ -311,7 +342,8 @@
                             </div>
 
                             <div class="box-detail-map">
-                                <img src='{{asset("frontend/icons/svg/Whatsapp.svg")}}' alt="" srcset="" class="icon-sm">
+                                <img src='{{asset("frontend/icons/svg/Whatsapp.svg")}}' alt="" srcset=""
+                                    class="icon-sm">
                                 <p>
                                     +62 21 2933 9389
                                 </p>
@@ -339,23 +371,30 @@
 
 
 
+@if(session('status'))
+
+@endif
+
 
 @endsection
 
 @section('script')
-    <script src="https://www.google.com/recaptcha/api.js"></script>
-    <script>
-     function callbackThen(response){
-            // read HTTP status
-            console.log(response.status);
-            
-            // read Promise object
-            response.json().then(function(data){
-                console.log(data);
-            });
-        }
-        function callbackCatch(error){
-            console.error('Error:', error)
-        } 
-    </script>
+
+<script src="{{asset('frontend/plugin/notify/notify.min.js')}}"></script>
+<script>
+    $(document).ready(function(){
+        
+        @if(session('status'))
+             $.notify(
+                 
+             "{{session('status')}}",
+             "success",
+             { position:"right middle" }
+             
+             );
+        @endif
+    })
+
+</script>
+{!! htmlScriptTagJsApi() !!}
 @endsection

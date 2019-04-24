@@ -792,3 +792,21 @@ a[href^="https://maps.google.com/maps"] {
    }
 
 }
+
+#message_alert{
+   .alert{
+      border-radius: unset;
+      border: unset;
+
+      ul{
+         margin-bottom: 0;
+      }
+
+      &.alert-danger{
+         color: #ffffff;
+         background-color: #ef283b;
+      }
+   }
+
+
+}

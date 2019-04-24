@@ -549,5 +549,13 @@ a[href^="https://maps.google.com/maps"] {
     font-size: 25px; }
   .about-us .main-content {
     font-size: 14px; } }
+#message_alert .alert {
+  border-radius: unset;
+  border: unset; }
+  #message_alert .alert ul {
+    margin-bottom: 0; }
+  #message_alert .alert.alert-danger {
+    color: #ffffff;
+    background-color: #ef283b; }
 
 /*# sourceMappingURL=style.css.map */

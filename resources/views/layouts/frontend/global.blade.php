@@ -36,14 +36,16 @@
                 <li class="nav-item ">
                     <a class="nav-link" href="#about-us">About Us</span></a>
                 </li>
+                
+                    <li class="nav-item ">
+                    <a class="nav-link" href="#tenants">Tenants</span></a>
+                </li>
+               
                 <!--
-              <li class="nav-item ">
-            <a class="nav-link" href="#tenants">Tenants</span></a>
-          </li>
-          -->
                 <li class="nav-item ">
                     <a class="nav-link" href="#landlord">Landlord</span></a>
                 </li>
+                 -->
                 <li class="nav-item ">
                     <a class="nav-link" href="#contact-us">Contacts</span></a>
                 </li>
@@ -77,15 +79,16 @@
                     <li class="nav-item ">
                         <a class="nav-link" href="#about-us">About Us</span></a>
                     </li>
+                   
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#tenants">Tenants</span></a>
+                    </li>
+                  
                     <!--
-              <li class="nav-item ">
-            <a class="nav-link" href="#tenants">Tenants</span></a>
-          </li>
-          -->
-
                     <li class="nav-item ">
                         <a class="nav-link" href="#landlord">Landlord</span></a>
                     </li>
+                     -->
                     <li class="nav-item ">
                         <a class="nav-link" href="#contact-us">Contacts</span></a>
                     </li>

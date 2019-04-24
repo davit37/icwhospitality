@@ -16,7 +16,7 @@
     <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
     <meta name="author" content="Łukasz Holeczek">
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
-    <title> @yield("title")</title>
+    <title>Icwhostpitality -  @yield("title")</title>
     <!-- Icons-->
   
     <link href="{{asset('assets/coreui/node_modules/flag-icon-css/css/flag-icon.min.css')}}" rel="stylesheet">
@@ -126,7 +126,7 @@
                 <i class="nav-icon icon-people"></i> Management Users</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{route("icw_admin.setting")}}">
+              <a class="nav-link" href="{{route("setting")}}">
                 <i class="nav-icon icon-book-open"></i> Settings</a>
             </li>
             
