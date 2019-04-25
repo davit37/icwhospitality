@@ -253,8 +253,7 @@ Welcome to ICW
                 <h2 class="title ">
                     contact us
                 </h2>
-                <p>Have an Inquiry? feel free to get in touch with our costumer service
-                    by filling up the form below</p>
+               
 
             </div>
 
@@ -288,7 +287,9 @@ Welcome to ICW
 
                     <div class="form-group">
                         <textarea class="form-control f-c-contact" rows="5" placeholder="Enquiry"
-                            name="inquiry" required></textarea>
+                            name="inquiry" required>Lorem ipsum dolor sit amet, sale reque at pro, aeque scripserit referrentur ei sit. At altera civibus detracto vel, unum salutandi assueverit et ius. Mei te debitis petentium reformidans. Ius audire forensibus ne, no mei justo summo minimum. Splendide repudiandae qui ea.
+
+                        </textarea>
                     </div>
                     
                     {{-- reCAPTCHA  --}}
@@ -298,7 +299,12 @@ Welcome to ICW
                     {{-- end --}}
                     
                     <div class="form-group ">
-                        <button type="button" id='btn_submit_message' class="btn btn-primary btn-contact text-right ">Submit</button>
+                        
+                        <button type="button" id='btn_submit_message' class="btn btn-primary btn-contact text-right " >
+                            <span class="spinner-grow spinner-grow-sm d-none"></span>
+                                
+                            Submit
+                        </button>
                     </div>
 
                 </form>

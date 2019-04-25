@@ -271,6 +271,7 @@ $(document).ready(function () {
         var _message_alert_dom = $("#message_alert");
         var _message_alert = '';
 
+       
 
         $.ajax({
 
@@ -281,27 +282,30 @@ $(document).ready(function () {
         }).done(function (msg) {
 
             location.reload();
+            
+            grecaptcha.reset()
+            
         }).fail(function (msg) {
 
-            var _error = Object.values(msg.responseJSON[0]);
-
             grecaptcha.reset()
+
+            var _error = Object.values(msg.responseJSON[0]);
 
             _error.forEach(el => {
 
                 _message_alert += `<li>${el}</li>`
+
             });
-
-
+            
             _message_alert_dom.html(`
           
-            <div class="alert alert-danger">
-                <ul>
-                  ${ _message_alert }
-                </ul>
-            </div>
+                <div class="alert alert-danger">
+                    <ul>
+                    ${ _message_alert }
+                    </ul>
+                </div>
           
-          `)
+            `)
 
         })
 

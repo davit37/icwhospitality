@@ -23,7 +23,7 @@
     <div class="container mt-3 ">
         <div class="row">
             <div class="box-info text-right col-12 pr-0" style='z-index:3'>
-                <p>Contact us: +62 21 2933 9389 | Email: Ask@icwhospitality.com</p>
+                <p>Contact us: +6221 2933 9389 | Email: Ask@icwhospitality.com</p>
                 <p>16th Floor - T9, APL Tower, Podomoro City, Jl. Let Jend S. Parman Kav 28, Jakarta 11470, Indonesia
                 </p>
             </div>

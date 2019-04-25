@@ -18,7 +18,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'Frontend\HomeController@index');
-Route::post('send_message','Frontend\HomeController@get_message')->name('send_message');
+Route::post('send_message','Frontend\HomeController@send_message')->name('send_message');
 
 
 //Route Admin/Backend
@@ -29,7 +29,7 @@ Route::group(['middleware' => ['auth']], function () {
    Route::prefix('icw_admin')->group(function () {
 
       Route::get('setting', 'Backend\SettingsController@index')->name('setting');
-      Route::get('messages','Backend\MessageController@index');
+      Route::get('messages','Backend\MessageController@index')->name('messages');
       
   });
 

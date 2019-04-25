@@ -1,17 +1,32 @@
 @extends('layouts.backend.global')
 @section('title')
-    Messages
+Messages
 @endsection
 @section('header-scripts')
 <link rel="stylesheet" href="{{asset('assets/coreui/node_modules/datatables/dataTables.bootstrap4.css')}}">
 @endsection
+
+
+{{-- BreadCrumb --}}
+@section('breadcrumb')
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><i class='icon-home'></i> Home</li>
+    <li class="breadcrumb-item active"><i class="icon-envelope"></i> Inquiry</li>
+    <!-- Breadcrumb Menu-->
+   
+</ol>
+@endsection
+
+
+
+{{-- Content --}}
 
 @section('content')
 
 
 
 <div class="card">
-  
+
 
     <div class="card-body">
         @if(session('status'))
@@ -24,7 +39,7 @@
             </button>
         </div>
         @endif
-   
+
         <table class="table  table-bordered table-bordered datatable-messages">
 
             <thead>
@@ -40,7 +55,7 @@
                 @endforeach
 
             </tbody>
-           
+
         </table>
     </div>
 
@@ -53,10 +68,10 @@
 <script src="{{asset('assets/coreui/node_modules/datatables/datatables.js')}}"></script>
 
 <script>
-  var _table =  $('.datatable-messages').DataTable( {
+    var _table = $('.datatable-messages').DataTable({
         "ordering": false,
 
-    } );
-  
+    });
+
 </script>
 @endsection

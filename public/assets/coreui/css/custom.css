@@ -15,9 +15,7 @@
   color: #fff;
   background: #24274a; }
 
-  .sidebar .nav-link.active {
-    color: #fff;
-    background: #323a7382;
-}
+.breadcrumb-item.active {
+  color: #00a1f1; }
 
 /*# sourceMappingURL=custom.css.map */
