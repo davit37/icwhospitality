@@ -21,7 +21,7 @@
     <!-- Icons-->
 
     <link href="{{asset('assets/coreui/node_modules/flag-icon-css/css/flag-icon.min.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="{{asset('assets/coreui/node_modules/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/coreui/node_modules/simple-line-icons/css/simple-line-icons.css')}}" rel="stylesheet">
     <!-- Main styles for this application-->
     <link href="{{asset('assets/coreui/css/style.css')}}" rel="stylesheet">
@@ -61,61 +61,15 @@
         </button>
 
         <ul class="nav navbar-nav ml-auto">
-
-            <li class="nav-item dropdown">
-                <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                    aria-expanded="false">
-                    <img class="img-avatar" src="{{asset('assets/coreui/img/avatars/6.jpg')}}"
-                        alt="admin@bootstrapmaster.com">
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <div class="dropdown-header text-center">
-                        <strong>Account</strong>
-                    </div>
-                    <a class="dropdown-item" href="#">
-                        <i class="fa fa-bell-o"></i> Updates
-                        <span class="badge badge-info">42</span>
-                    </a>
-                    <a class="dropdown-item" href="#">
-                        <i class="fa fa-envelope-o"></i> Messages
-                        <span class="badge badge-success">42</span>
-                    </a>
-                    <a class="dropdown-item" href="#">
-                        <i class="fa fa-tasks"></i> Tasks
-                        <span class="badge badge-danger">42</span>
-                    </a>
-                    <a class="dropdown-item" href="#">
-                        <i class="fa fa-comments"></i> Comments
-                        <span class="badge badge-warning">42</span>
-                    </a>
-                    <div class="dropdown-header text-center">
-                        <strong>Settings</strong>
-                    </div>
-                    <a class="dropdown-item" href="#">
-                        <i class="fa fa-user"></i> Profile</a>
-                    <a class="dropdown-item" href="#">
-                        <i class="fa fa-wrench"></i> Settings</a>
-                    <a class="dropdown-item" href="#">
-                        <i class="fa fa-usd"></i> Payments
-                        <span class="badge badge-secondary">42</span>
-                    </a>
-                    <a class="dropdown-item" href="#">
-                        <i class="fa fa-file"></i> Projects
-                        <span class="badge badge-primary">42</span>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">
-                        <i class="fa fa-shield"></i> Lock Account</a>
-                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                     document.getElementById('logout-form').submit();">
-
-                        <i class="fa fa-lock"></i> Logout</a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        {{ csrf_field() }}
-                    </form>
-                </div>
-            </li>
-        </ul>
+        
+                <li class="nav-item dropdown">
+                 
+                  <form action="{{route("logout")}}" method="POST">
+                    @csrf
+                    <button class="dropdown-item" style="cursor:pointer"><i class='icon-login' style="color:black"></i> Sign Out</button>
+                  </form>
+                </li>
+              </ul>
 
         <button class="navbar-toggler aside-menu-toggler d-lg-none" type="button" data-toggle="aside-menu-show">
             <span class="navbar-toggler-icon"></span>
@@ -127,20 +81,23 @@
                 <ul class="nav">
 
                     <li class="nav-title"></li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">
-                            <i class="nav-icon icon-people"></i> Management Users</a>
-                    </li>
-
+                   
                     <li class="nav-item">
                         <a class="nav-link" href="{{route("messages")}}">
                             <i class="nav-icon icon-envelope"></i> Inquiry</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route("setting")}}">
+                            <a class="nav-link" href="{{route("group_companies.index")}}">
+                                <i class="nav-icon icon-people"></i> Group Companies</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route("setting.index")}}">
                             <i class="nav-icon icon-settings"></i> Settings</a>
                     </li>
+
+                   
 
                    
 
@@ -164,14 +121,7 @@
 
     </div>
     <footer class="app-footer">
-        <div>
-            <a href="https://assets/coreui.io">CoreUI</a>
-            <span>&copy; 2018 creativeLabs.</span>
-        </div>
-        <div class="ml-auto">
-            <span>Powered by</span>
-            <a href="https://assets/coreui.io">CoreUI</a>
-        </div>
+       
     </footer>
     <!-- CoreUI and necessary plugins-->
     <script src="{{asset('assets/coreui/node_modules/jquery/dist/jquery.min.js')}}"></script>

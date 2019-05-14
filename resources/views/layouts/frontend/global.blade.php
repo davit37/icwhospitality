@@ -59,7 +59,7 @@
 
 
 
-    <nav class="navbar navbar-expand-lg navbar-light mt-3   " style='z-index:2'>
+    <nav class="navbar navbar-expand-lg navbar-light mt-3   " style='z-index:4'>
 
         <div class="container">
             <span class="main-logo">
@@ -123,7 +123,7 @@
                         <ul>
                             <li><a href="">FAQ</a></li>
                             <li><a href="#about-us">About Us</a></li>
-                            <li><a href="">Blog</a></li>
+                            <li><a href="">Articles</a></li>
                             <li><a href="">Careers</a></li>
                         </ul>
                     </div>
@@ -132,7 +132,7 @@
                             Contact Us
                         </h4>
                         <ul>
-                            <li><a href="">Send Msessage</a></li>
+                            <li><a href="">Send Message</a></li>
                             <li><a href="">Contact Us</a></li>
                             <li><a href="">Privacy Policy</a></li>
 

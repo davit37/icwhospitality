@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
 use App\Model\Message as M_message;
 use App\Mail\InquiryMail;
+use App\Model\GroupCompany;
+use App\Model\SettingsModel as Setting;
 
 class HomeController extends Controller
 {
@@ -14,7 +16,10 @@ class HomeController extends Controller
      * ? return home
      */
     public function index(){
-        return view('frontend.index');
+
+        $companies = GroupCompany::get();
+
+        return view('frontend.index',['companies'=>$companies]);
     }
 
 
@@ -42,9 +47,13 @@ class HomeController extends Controller
         $email = $req->email;
         $inquiry = $req->inquiry;
 
+
+        
+    $setting = Setting::find('1');
+    
        try{
        
-            Mail::to('ask@icwhospitality.com')->send(new InquiryMail($name, $email, $inquiry));
+            Mail::to($setting->email)->send(new InquiryMail($name, $email, $inquiry));
       
         }catch(Exception $e){
             return response()->json([
@@ -59,7 +68,7 @@ class HomeController extends Controller
         $message->inquiry = $inquiry;
 
         if($message->save()){
-            $req->session()->flash('status', 'Task was successful!');
+            $req->session()->flash('status', 'Message Sent !');
 
             return response()->json([
                 'success'

@@ -28,8 +28,27 @@ Route::group(['middleware' => ['auth']], function () {
 
    Route::prefix('icw_admin')->group(function () {
 
-      Route::get('setting', 'Backend\SettingsController@index')->name('setting');
+
+      Route::prefix('setting')->name('setting.')->group(function(){
+
+         Route::get('/', 'Backend\SettingsController@index')->name('index');
+         Route::post('store', 'Backend\SettingsController@store')->name('store');
+      });     
+
       Route::get('messages','Backend\MessageController@index')->name('messages');
+
+      //Page group companies
+      Route::prefix('group_companies')->name('group_companies.')->group(function(){
+
+         
+         $_company = 'Backend\GroupCompanyController@';
+
+         Route::get('form', $_company.'form')->name('form');
+         Route::Post('store/{id?}', $_company.'store')->name('store');
+         Route::get('/',$_company.'index')->name('index');
+         Route::delete('destroy', $_company.'destroy')->name('destroy');
+
+      });
       
   });
 
@@ -37,3 +56,5 @@ Route::group(['middleware' => ['auth']], function () {
 
   
 });
+
+

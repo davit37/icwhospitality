@@ -22,9 +22,7 @@ Welcome to ICW
             <p>TO <strong class="font-weight-bold">ICW</strong></p>
         </h1>
 
-        <a id='btn-welcome' href="http://" class="btn btn-icw-primary animated" role="button"><i
-                class="fab fa-lg fa-whatsapp"></i> CHAT US ON
-            WHATSHAPP</a>
+     
     </div>
 
 
@@ -53,18 +51,14 @@ Welcome to ICW
     </div>
 
     <div class="row justify-content-center logo-container mt-5 mb-5 " id="l-about-us">
-        <img src='{{asset("frontend/logo/Paris-Logo-2019.png")}}' alt="..."
-            class="img-thumbnail logo-thumbnail animated delay-5s">
-        <img src='{{asset("frontend/logo/Logo BOUTIQUE OFFICE.jpg")}}' alt="..."
-            class="img-thumbnail logo-thumbnail animated delay-4s">
-        <img src='{{asset("frontend/logo/SISSAE LIVING.jpg")}}' alt="..."
-            class="img-thumbnail logo-thumbnail animated delay-3s">
-        <img src='{{asset("frontend/logo/jgp012-1024x710.jpg")}}' alt="..."
-            class="img-thumbnail logo-thumbnail animated delay-2s">
-        <img src='{{asset("frontend/logo/Logo DAFAM PROPERTY.jpg")}}' alt="..."
-            class="img-thumbnail logo-thumbnail animated delay-1s">
-        <img src='{{asset("frontend/logo/Logo JAYA PROPERTY.jpg")}}' alt="..."
-            class="img-thumbnail logo-thumbnail animated fast">
+
+        @foreach ($companies as $company)
+
+        <a href="{{$company->website_url}}" target="_blank">
+            <img src='{{$company->logo}}' alt="..." class="img-thumbnail logo-thumbnail animated delay-1s">
+        </a>
+
+        @endforeach
 
     </div>
 </div>
@@ -198,27 +192,27 @@ Welcome to ICW
 <!-- TENANTS  -->
 
 
-   <div id='tenants'></div>
-   <div class="wrapper-5">
+<div id='tenants'></div>
+<div class="wrapper-5">
 
-     <div class="container">
-       <div class='row'>
-         <div class="col-md-5 mt-5 ml-auto text-right animated" id='c-tenant'>
-           <h4 class='mt-5 text-white to-uppercase font-weight-bolder header-tenants'>
-             Providing Your Tenants
-             Our First Class Service
-           </h4>
-           <p class="text-white" style="letter-spacing: 1px;">
-             Tenant is our biggest assets and we ensure your tenant satisfaction by providing first class service
-           </p>
-         </div>
+    <div class="container">
+        <div class='row'>
+            <div class="col-md-5 mt-5 ml-auto text-right animated" id='c-tenant'>
+                <h4 class='mt-5 text-white to-uppercase font-weight-bolder header-tenants'>
+                    Providing Your Tenants
+                    Our First Class Service
+                </h4>
+                <p class="text-white" style="letter-spacing: 1px;">
+                    Tenant is our biggest assets and we ensure your tenant satisfaction by providing first class service
+                </p>
+            </div>
 
-       </div>
+        </div>
 
 
-     </div>
+    </div>
 
-   </div>
+</div>
 
 
 
@@ -247,17 +241,28 @@ Welcome to ICW
 
 
 <div id='contact-us' class="wrapper-7">
+
+
+
     <div class="container">
         <div class='row justify-content-center mb-5 ml-0 mr-0'>
             <div class="col-md-7 mt-5 text-center">
                 <h2 class="title ">
                     contact us
                 </h2>
-               
+
 
             </div>
 
             <div class="col-md-8">
+
+                <div class="box-spinner d-none ">
+                    <div class="spinner-grow spinner-inner" style="width: 3rem; height: 3rem;" role="status">
+                        
+                    </div>
+                  
+                </div>
+
                 <form action="{{route('send_message')}}" method="POST" id="form_message">
 
                     <div id="message_alert">
@@ -265,13 +270,13 @@ Welcome to ICW
                         <div class="alert alert-danger">
                             <ul>
                                 @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
+                                <li>{{ $error }}</li>
                                 @endforeach
                             </ul>
                         </div>
-                    @endif
+                        @endif
                     </div>
-                   
+
 
                     @csrf
 
@@ -286,23 +291,21 @@ Welcome to ICW
                     </div>
 
                     <div class="form-group">
-                        <textarea class="form-control f-c-contact" rows="5" placeholder="Enquiry"
-                            name="inquiry" required>Lorem ipsum dolor sit amet, sale reque at pro, aeque scripserit referrentur ei sit. At altera civibus detracto vel, unum salutandi assueverit et ius. Mei te debitis petentium reformidans. Ius audire forensibus ne, no mei justo summo minimum. Splendide repudiandae qui ea.
-
-                        </textarea>
+                        <textarea class="form-control f-c-contact" rows="5" placeholder="Enquiry" name="inquiry"
+                            required></textarea>
                     </div>
-                    
+
                     {{-- reCAPTCHA  --}}
 
                     {!! htmlFormSnippet() !!}
 
                     {{-- end --}}
-                    
+
                     <div class="form-group ">
-                        
-                        <button type="button" id='btn_submit_message' class="btn btn-primary btn-contact text-right " >
+
+                        <button type="button" id='btn_submit_message' class="btn btn-primary btn-contact text-right ">
                             <span class="spinner-grow spinner-grow-sm d-none"></span>
-                                
+
                             Submit
                         </button>
                     </div>
@@ -330,20 +333,20 @@ Welcome to ICW
                             </h4>
 
                             <div class="box-detail-map">
-                                <img src='{{asset("frontend/icons/svg/building-2.svg")}}' alt="" srcset=""
-                                    class="icon-sm">
+                                <img src='{{asset("frontend/icons/svg/address.svg")}}' alt="" srcset="" class="icon-sm">
                                 <p>
-                                    16th Floor - T-9,
-                                    APL Tower, Podomoro City
-                                    Jl. Let Jend S. Parman Kav 28
+                                    16th Floor - T9<br>
+                                    APL Tower, Podomoro City<br>
+                                    Jl. Let Jend S. Parman Kav 28<br>
                                     Jakarta 11470, Indonesia
                                 </p>
                             </div>
 
                             <div class="box-detail-map">
-                                <img src='{{asset("frontend/icons/svg/phone.svg")}}' alt="" srcset="" class="icon-sm">
+                                <img src='{{asset("frontend/icons/svg/new_phone.svg")}}' alt="" srcset=""
+                                    class="icon-sm">
                                 <p>
-                                    +62 21 2933 9389
+                                    +6221 2933 9389
                                 </p>
                             </div>
 
@@ -351,7 +354,7 @@ Welcome to ICW
                                 <img src='{{asset("frontend/icons/svg/Whatsapp.svg")}}' alt="" srcset=""
                                     class="icon-sm">
                                 <p>
-                                    +62 21 2933 9389
+                                    +6221 2933 9389
                                 </p>
                             </div>
 
@@ -388,16 +391,17 @@ Welcome to ICW
 
 <script src="{{asset('frontend/plugin/notify/notify.min.js')}}"></script>
 <script>
-    $(document).ready(function(){
-        
+    $(document).ready(function () {
+
         @if(session('status'))
-             $.notify(
-                 
-             "{{session('status')}}",
-             "success",
-             { position:"right middle" }
-             
-             );
+        $.notify(
+
+            "{{session('status')}}",
+            "success", {
+                position: "left bottom"
+            }
+
+        );
         @endif
     })
 

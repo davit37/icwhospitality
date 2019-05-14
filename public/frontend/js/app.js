@@ -272,6 +272,7 @@ $(document).ready(function () {
         var _message_alert = '';
 
        
+        $('.box-spinner').removeClass('d-none');
 
         $.ajax({
 
@@ -286,6 +287,7 @@ $(document).ready(function () {
             grecaptcha.reset()
             
         }).fail(function (msg) {
+            $('.box-spinner').addClass('d-none');
 
             grecaptcha.reset()
 

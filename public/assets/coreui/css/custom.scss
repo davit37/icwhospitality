@@ -20,6 +20,19 @@
     background: #24274a;
 }
 
-.breadcrumb-item.active {
-    color: #00a1f1;
+.breadcrumb-item{
+    &.parent{
+        color: #06b925;
+    }
+
+    &.active {
+        color: #00a1f1;
+    }
+}
+
+.logo-thumbnail{
+    margin-top: 15px;
+    max-height: 140px;
+    border: 1px solid #e3e7eac7;
+    border-radius: 3px;
 }
