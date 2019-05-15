@@ -562,6 +562,32 @@ a[href^="https://maps.google.com/maps"] {
   ##Screen = B/w 481px to 767px
 */
 @media (min-width: 481px) and (max-width: 767px) {
+  .map-container {
+    height: 70vh;
+    margin-bottom: 30px;
+    position: relative; }
+
+  .map-container .box-content p {
+    font-size: 11px;
+    margin-left: 45px;
+    margin-bottom: 0;
+    margin-top: 0; }
+
+  .icon-sm {
+    width: 37px;
+    height: 31px;
+    float: left;
+    margin-right: 3px; }
+
+  .map-container .box-content {
+    padding: 25px;
+    width: 100%; }
+    .map-container .box-content h4 {
+      font-size: 1.2rem; }
+
+  .box-detail-map {
+    margin-bottom: 20px; }
+
   .main-logo img {
     width: 80%; }
 
